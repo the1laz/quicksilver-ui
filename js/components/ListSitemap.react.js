@@ -12,6 +12,8 @@ var Navbar = require('react-bootstrap').Navbar;
 var Nav = require('react-bootstrap').Nav;
 var CollapsibleNav = require('react-bootstrap').CollapsibleNav;
 var settings = require('../../settings.js');
+var scope = {};
+scope.widgets = require('./Widget'); 
 // Method to retrieve state from Stores
 function getThingState() {
   
@@ -150,7 +152,7 @@ var ListSitemap = React.createClass({
   </div>
 </nav>      
 
-        <FluxThingList items={this.state.elements} setPosition={this.setPosition}/>
+        <FluxThingList items={this.state.elements} setPosition={this.setPosition} scope={scope}/>
 
       </div>
   	);
